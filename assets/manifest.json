@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+
+  "name": "easynator3010-beta",
+  "description": "Useful ligatus plugin for publishers ",
+  "version": "1.0",
+  "icons":{
+    "16":"assets/icon.png",
+    "48":"assets/icon.png",
+    "128":"assets/icon.png"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_icon": "assets/icon.png",
+    "default_title": "easynator3010",
+    "default_popup": ""
+  },
+  "content_scripts": [
+    {
+
+      "matches": ["<all_urls>"],
+      "css": ["box.css"],
+      "js": ["./js/inContentScript.js"]
+
+    }
+  ],
+  "background": {
+    "scripts": ["./js/app.js"]
+  },
+  "web_accessible_resources": [
+    "box.html",
+    "box.css"
+  ]
+}
